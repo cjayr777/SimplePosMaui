@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Pos.DataAccess\Pos.DataAccess.csproj" />
+    <ProjectReference Include="..\Pos.ViewModel\Pos.ViewModel.csproj" />
+  </ItemGroup>
+
 </Project>

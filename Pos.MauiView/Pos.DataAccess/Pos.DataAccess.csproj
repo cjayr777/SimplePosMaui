@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Pos.DataTransfer\Pos.DataTransfer.csproj" />
+    <ProjectReference Include="..\Proj.Util\Proj.Util.csproj" />
+  </ItemGroup>
+
 </Project>

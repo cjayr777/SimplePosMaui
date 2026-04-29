@@ -5,7 +5,7 @@ using Proj.Util;
 
 namespace Pos.BusinessLogic;
 
-using ProductTypeVmResult = DataResult<List<ProductTypeDto>>;
+using ProductTypeVmResult = DataResult<List<ProductTypeVm>>;
 
 public class ProductTypeBizz
 {
@@ -32,6 +32,21 @@ public class ProductTypeBizz
         return dto;
     }
 
+    private ProductTypeVm DtoToVm(ProductTypeDto dto)
+    {
+        ProductTypeVm vm = new();
+
+        vm.ProductTypeId = dto.ProductTypeId;
+        vm.Name = dto.Name;
+        vm.Details = dto.Details;
+        vm.SortOrder = dto.SortOrder;
+        vm.RowVersion = dto.RowVersion;
+        vm.StatId = dto.StatId;
+        vm.StatName = dto.StatName;
+
+        return vm;
+    }
+
 
     public async Task<ProductTypeVmResult> GetListAsync(ProductTypeVm vm)
     {
@@ -44,16 +59,7 @@ public class ProductTypeBizz
 
         List<ProductTypeVm> list = new();
 
-        list = result.Data.Select(dto => new ProductTypeVm
-        {
-            ProductTypeId = dto.ProductTypeId,
-            Name = dto.Name,
-            Details = dto.Details,
-            SortOrder = dto.SortOrder,
-            RowVersion = dto.RowVersion,
-            StatId = dto.StatId,
-            StatName = dto.StatName
-        }).ToList();
+        list = result.Data.Select(DtoToVm).ToList();
 
         return ProductTypeVmResult.Ok(list, result.Message);
     }

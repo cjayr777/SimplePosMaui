@@ -1,3 +1,9 @@
 <Solution>
+  <Project Path="Pos.BusinessLogic/Pos.BusinessLogic.csproj" Id="75120970-f20d-427f-81f2-e151a418141f" />
+  <Project Path="Pos.DataAccess/Pos.DataAccess.csproj" Id="bffb18de-7494-4d05-9284-27a54e7f3a1c" />
+  <Project Path="Pos.DataTransfer/Pos.DataTransfer.csproj" Id="c78b0ae6-71d1-4271-bbae-5634fc4a9206" />
   <Project Path="Pos.MauiView/Pos.MauiView.csproj" />
+  <Project Path="Pos.Model/Pos.Model.csproj" Id="312c3b64-4bba-45da-a814-a5d66e50f859" />
+  <Project Path="Pos.ViewModel/Pos.ViewModel.csproj" Id="f58954b7-376d-4863-8824-7e2ef353f4b1" />
+  <Project Path="Proj.Util/Proj.Util.csproj" />
 </Solution>
