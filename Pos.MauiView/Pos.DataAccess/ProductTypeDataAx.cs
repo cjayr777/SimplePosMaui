@@ -4,9 +4,9 @@ using Proj.Util.Tabular;
 
 namespace Pos.DataAccess;
 
-using ProductTypeResult = DataResult<List<ProductTypeDto>>;
+using ProductTypeDtoResult = DataResult<List<ProductTypeDto>>;
 
-public class ProductTypeDataAx : SimplifiedResultReturn
+public class ProductTypeDataAx : SimpleResultReturn
 {
     PostgreHelper ph;
 
@@ -16,7 +16,7 @@ public class ProductTypeDataAx : SimplifiedResultReturn
     }
 
 
-    public async Task<ProductTypeResult> SelectAsync(string search, string sortMode)
+    public async Task<ProductTypeDtoResult> SelectAsync(string search, string sortMode)
     {
         var args = ph.Args(
                 (ArgName.Search, search),
