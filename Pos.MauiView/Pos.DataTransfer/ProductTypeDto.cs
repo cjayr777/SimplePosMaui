@@ -1,6 +1,6 @@
-﻿namespace Pos.Model;
+﻿namespace Pos.DataTransfer;
 
-public class ProductType
+public class ProductTypeDto
 {
     public int ProductTypeId { get; set; }
     public string Name { get; set; }
@@ -8,9 +8,10 @@ public class ProductType
     public int SortOrder { get; set; }
     public string RowVersion { get; set; }
     public int StatId { get; set; }
+    public string StatName { get; set; }
 
 
-    public ProductType()
+    public ProductTypeDto()
     {
         ProductTypeId = 0;
         Name = "";
@@ -18,6 +19,8 @@ public class ProductType
         SortOrder = 0;
         RowVersion = "";
         StatId = 0;
+        StatName = "";
     }
 
 }
+
