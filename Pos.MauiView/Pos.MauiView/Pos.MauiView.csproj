@@ -72,4 +72,9 @@
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Pos.DataTransfer\Pos.DataTransfer.csproj" />
+      <ProjectReference Include="..\Pos.ViewModel\Pos.ViewModel.csproj" />
+    </ItemGroup>
+
 </Project>

@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="Pos.Api/Pos.Api.csproj" Id="0082adf8-d2d3-4c60-8c6f-b31cd990778b" />
   <Project Path="Pos.BusinessLogic/Pos.BusinessLogic.csproj" Id="75120970-f20d-427f-81f2-e151a418141f" />
   <Project Path="Pos.DataAccess/Pos.DataAccess.csproj" Id="bffb18de-7494-4d05-9284-27a54e7f3a1c" />
   <Project Path="Pos.DataTransfer/Pos.DataTransfer.csproj" Id="c78b0ae6-71d1-4271-bbae-5634fc4a9206" />
