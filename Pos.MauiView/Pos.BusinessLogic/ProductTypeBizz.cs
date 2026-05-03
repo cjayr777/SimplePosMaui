@@ -50,7 +50,7 @@ public class ProductTypeBizz
 
     public async Task<ProductTypeVmResult> GetListAsync(ProductTypeVm vm)
     {
-        var result = await da.SelectAsync(Turn.String(vm.Search), Turn.String(vm.SortMode));
+        var result = await da.SelectAsync( Turn.Int(vm.ProductTypeId), Turn.String(vm.Search), Turn.String(vm.SortMode));
 
         if (!result.IsSuccess || result.Data == null)
         {

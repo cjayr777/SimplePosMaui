@@ -1,0 +1,61 @@
+﻿@page "/producttypes"
+@using Pos.ViewModel
+@using Pos.MauiView.Service
+
+@inject ProductTypeService ProductTypeSvc
+
+@code {
+    private List<ProductTypeVm> productTypes;
+    private string errMsg = "";
+
+    private async Task LoadData()
+    {
+        var result = await ProductTypeSvc.GetProductTypesAsync(new ProductTypeVm());
+
+        if (result.IsSuccess && result.Data != null)
+        {
+            productTypes = result.Data;
+        }
+        else
+        {
+            errMsg = result.Message;
+        }
+    }
+}
+
+<h3>ProductTypes</h3>
+
+<button class="btn btn-primary" @onclick="LoadData">Refresh List</button>
+
+@if (errMsg != "")
+{
+    <input value="@errMsg" />
+    <br />
+}
+else if (productTypes == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in productTypes)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Details</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+

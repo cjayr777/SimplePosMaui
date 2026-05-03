@@ -25,7 +25,7 @@ public class ProductTypeVm
         RowVersion = "";
         StatId = 0;
         StatName = "";
-        SortMode = "";
+        SortMode = "asc";
         ActionerId = 0;
         ActionerName = "";
         Search = "";

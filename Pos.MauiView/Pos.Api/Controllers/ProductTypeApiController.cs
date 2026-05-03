@@ -2,6 +2,7 @@
 using Pos.Api.Helper;
 using Pos.BusinessLogic;
 using Pos.ViewModel;
+using Proj.Util;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -57,8 +58,14 @@ public class ProductTypeApiController : BaseApiController
 
 
     [HttpGet("select")]
-    public async Task<ActionResult> GetList([FromQuery] ProductTypeVm vm)
+    public async Task<ActionResult> GetList(string search, string sortMode)
     {
+        var vm = new ProductTypeVm
+        {
+            Search = search ?? "",
+            SortMode = sortMode ?? ""
+        };
+
         var result = await biz.GetListAsync(vm);
         return HandleResult(result);
     }

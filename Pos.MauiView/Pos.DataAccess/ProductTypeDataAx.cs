@@ -16,9 +16,10 @@ public class ProductTypeDataAx : SimpleResultReturn
     }
 
 
-    public async Task<ProductTypeDtoResult> SelectAsync(string search, string sortMode)
+    public async Task<ProductTypeDtoResult> SelectAsync( int id, string search, string sortMode)
     {
         var args = ph.Args(
+                (ArgName.ProductTypeId, id),
                 (ArgName.Search, search),
                 (ArgName.SortMode, sortMode)
             );
@@ -42,7 +43,7 @@ public class ProductTypeDataAx : SimpleResultReturn
         }
         catch (Exception ex)
         {
-            return Fail(new(), ex.Message);
+            return Fail<List<ProductTypeDto>>(ex.Message, new List<ProductTypeDto>());
         }
     }
 
